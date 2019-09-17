@@ -11,6 +11,8 @@ public class GuardController : MonoBehaviour
     public float turnSpeed = 5f;
     public Transform point1;
     public Transform point2;
+    public Sprite coneDetected;
+    public Sprite coneUndetected;
 
     // Start is called before the first frame update
     void Start()
