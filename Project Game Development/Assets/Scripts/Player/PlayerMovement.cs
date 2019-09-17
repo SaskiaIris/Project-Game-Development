@@ -39,19 +39,23 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.W))
         {
-            transform.position += transform.up * speed * Time.deltaTime;
+            transform.position = new Vector3(transform.position.x, transform.position.y + speed * Time.deltaTime, 0);
+            transform.eulerAngles = new Vector3(0, 0, 0);
         }
         if (Input.GetKey(KeyCode.S))
         {
-            transform.position -= transform.up * speed * Time.deltaTime;
+            transform.position = new Vector3(transform.position.x, transform.position.y - speed * Time.deltaTime, 0);
+            transform.eulerAngles = new Vector3(0, 0, 180);
         }
         if (Input.GetKey(KeyCode.D))
         {
-            transform.Rotate(0,0, -turnSpeed, Space.Self);
+            transform.position = new Vector3(transform.position.x + speed * Time.deltaTime, transform.position.y, 0);
+            transform.eulerAngles = new Vector3(0, 0, -90);
         }
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Rotate(0, 0, turnSpeed, Space.Self);
+            transform.position = new Vector3(transform.position.x - speed * Time.deltaTime, transform.position.y, 0);
+            transform.eulerAngles = new Vector3(0, 0, 90);
         }
 
         if (Input.GetKey(KeyCode.X) && detectedByGuards.Count > 0)
