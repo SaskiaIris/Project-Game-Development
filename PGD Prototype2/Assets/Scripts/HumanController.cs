@@ -20,9 +20,13 @@ public class HumanController : MonoBehaviour
     void Update()
     {
         float step = speed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, chosenRoute.transform.GetChild(followPointIndex).position, step);
+        Transform currentChildFollowing = chosenRoute.transform.GetChild(followPointIndex);
+        transform.position = Vector3.MoveTowards(transform.position, currentChildFollowing.position, step);
 
+        // Freeze Y Position
         transform.position = new Vector3(transform.position.x, originalY, transform.position.z);
+        //transform.LookAt(currentChildFollowing);
+        //transform.rotation = Quaternion.Euler(0, transform.rotation.y, 0);
     }
 
     void OnTriggerEnter(Collider coll)
