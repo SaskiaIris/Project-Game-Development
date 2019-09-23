@@ -9,6 +9,8 @@ public class HumanController : MonoBehaviour
     int followPointIndex = 0;
     float originalY;
 
+    bool finished = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,14 +21,18 @@ public class HumanController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float step = speed * Time.deltaTime;
-        Transform currentChildFollowing = chosenRoute.transform.GetChild(followPointIndex);
-        transform.position = Vector3.MoveTowards(transform.position, currentChildFollowing.position, step);
+        if (!finished)
+        {
+            float step = speed * Time.deltaTime;
+            Transform currentChildFollowing = chosenRoute.transform.GetChild(followPointIndex);
+            transform.position = Vector3.MoveTowards(transform.position, currentChildFollowing.position, step);
 
-        // Freeze Y Position
-        transform.position = new Vector3(transform.position.x, originalY, transform.position.z);
-        //transform.LookAt(currentChildFollowing);
-        //transform.rotation = Quaternion.Euler(0, transform.rotation.y, 0);
+            // Freeze Y Position
+            transform.position = new Vector3(transform.position.x, originalY, transform.position.z);
+
+            Vector3 targetLookat = new Vector3(currentChildFollowing.position.x, transform.position.y, currentChildFollowing.position.z);
+            transform.LookAt(targetLookat);
+        }
     }
 
     void OnTriggerEnter(Collider coll)
@@ -36,6 +42,10 @@ public class HumanController : MonoBehaviour
             if (followPointIndex + 1 < chosenRoute.transform.childCount)
             {
                 followPointIndex++;
+            }
+            else
+            {
+                finished = true;
             }
 
         }
