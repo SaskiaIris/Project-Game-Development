@@ -37,7 +37,7 @@ public class HumanController : MonoBehaviour
 
     void OnTriggerEnter(Collider coll)
     {
-        if (coll.tag == "Point")
+        if (coll.tag == "Point" && chosenRoute.transform.GetChild(followPointIndex) == coll.gameObject.transform)
         {
             if (followPointIndex + 1 < chosenRoute.transform.childCount)
             {
