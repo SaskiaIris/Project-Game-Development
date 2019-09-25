@@ -10,12 +10,15 @@ public class HumanController : MonoBehaviour
     float originalY;
 
     bool finished = false;
+    private Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(chosenRoute.transform.childCount);
+        anim = GetComponent<Animator>();
         originalY = transform.position.y;
+
+        anim.SetBool("isWalking", true);
     }
 
     // Update is called once per frame
@@ -46,6 +49,7 @@ public class HumanController : MonoBehaviour
             else
             {
                 finished = true;
+                anim.SetBool("isWalking", false); 
             }
 
         }
