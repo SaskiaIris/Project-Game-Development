@@ -11,15 +11,15 @@ public class ScareMeter : MonoBehaviour
     void Start()
     {
         scare = 0;
-        balkWidth=GetComponent<RectTransform>();
+        balkWidth = GetComponent<RectTransform>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (scare<=100)
+        if (scare <= 100)
         {
-            balkWidth.sizeDelta = new Vector2(scare*2, balkWidth.sizeDelta.y);
-        } 
+            balkWidth.sizeDelta = new Vector2(scare * 2, balkWidth.sizeDelta.y);
+        }
     }
 }
