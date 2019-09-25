@@ -1180,6 +1180,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: YBot
       objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: ca50acd694324684389d5cf7d68c33d5,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: ca50acd694324684389d5cf7d68c33d5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1305,7 +1310,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 80
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -6057140222963153312, guid: ca50acd694324684389d5cf7d68c33d5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ca50acd694324684389d5cf7d68c33d5, type: 3}
 --- !u!1 &955338293
 GameObject:
@@ -2434,6 +2440,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 2.313919, z: 0.46358725}
   m_Center: {x: 0, y: 0.6742198, z: 0.08968552}
+--- !u!95 &1571669398
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571669394}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 16b10dbf4ca195e43a81bc3848ab3b66, type: 3}
+  m_Controller: {fileID: 9100000, guid: c2e6184a7b17cd54b82abe66b516575c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1606600333
 GameObject:
   m_ObjectHideFlags: 0
