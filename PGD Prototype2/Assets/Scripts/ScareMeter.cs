@@ -5,13 +5,14 @@ using UnityEngine;
 public class ScareMeter : MonoBehaviour
 {
     public int scare;
-    private RectTransform balkWidth;
+    private RectTransform rect;
 
     // Start is called before the first frame update
     void Start()
     {
         scare = 0;
-        balkWidth = GetComponent<RectTransform>();
+        rect = GetComponent<RectTransform>();
+        rect.sizeDelta = new Vector2(rect.sizeDelta.x, scare * 5);
     }
 
     // Update is called once per frame
@@ -19,7 +20,7 @@ public class ScareMeter : MonoBehaviour
     {
         if (scare <= 100)
         {
-            balkWidth.sizeDelta = new Vector2(scare * 2, balkWidth.sizeDelta.y);
+            rect.sizeDelta = new Vector2(rect.sizeDelta.x, scare * 5);
         }
     }
 }

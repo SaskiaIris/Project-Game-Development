@@ -7,7 +7,7 @@ public class ScareTrap : Trap
     [SerializeField]
     protected float AmountOfScare = 5f;
     [SerializeField]
-    protected float TrapRange = 5f;
+    protected float TrapRange = 100f;
 
     private ScareMeter scareMeter;
 

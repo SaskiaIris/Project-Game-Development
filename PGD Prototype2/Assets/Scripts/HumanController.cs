@@ -1,9 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HumanController : MonoBehaviour
 {
+    [SerializeField]
+    private Slider slider;
+
     public GameObject chosenRoute;
     public float speed = 5f;
     int followPointIndex = 0;
@@ -24,6 +28,7 @@ public class HumanController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        speed = slider.value;
         if (!finished)
         {
             float step = speed * Time.deltaTime;
