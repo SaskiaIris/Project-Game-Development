@@ -20,7 +20,7 @@ public class CameraChange : MonoBehaviour
             Camera.Priority = 9;
             Camera2.Priority = 10;
             GameObject.Find("YBot").GetComponent<MovementInput>().enabled = false;
-            GameObject.Find("YBot").GetComponent<PlayerCombat>().enabled = false;
+            GameObject.Find("YBot").GetComponent<Gather>().enabled = false;
             GameObject.Find("TreeEnt").GetComponent<TreeEntController>().enabled = true;
             GameObject.Find("TreeEnt").GetComponent<MovementInput>().enabled = true;
         }
@@ -30,7 +30,7 @@ public class CameraChange : MonoBehaviour
             Camera.Priority = 10;
             Camera2.Priority = 9;
             GameObject.Find("YBot").GetComponent<MovementInput>().enabled = true;
-            GameObject.Find("YBot").GetComponent<PlayerCombat>().enabled = true;
+            GameObject.Find("YBot").GetComponent<Gather>().enabled = true;
             GameObject.Find("TreeEnt").GetComponent<TreeEntController>().enabled = false;
             GameObject.Find("TreeEnt").GetComponent<MovementInput>().enabled = false;
         }
