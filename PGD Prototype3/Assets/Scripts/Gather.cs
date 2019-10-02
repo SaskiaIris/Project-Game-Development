@@ -29,11 +29,13 @@ public class Gather : MonoBehaviour
     private Camera cam;
 
     private Animator anim;
+    private ParticleSystem particleSystem;
 
     private void Awake()
     {
         cam = FindObjectOfType<Camera>();
         anim = GetComponent<Animator>();
+        particleSystem = transform.Find("Particle System").GetComponent<ParticleSystem>();
     }
 
     private void Update()
@@ -52,6 +54,7 @@ public class Gather : MonoBehaviour
             {
                 StartCoroutine(GatherResources());
                 anim.SetTrigger("Gather");
+                particleSystem.Play();
             }
         }
     }
@@ -76,6 +79,7 @@ public class Gather : MonoBehaviour
         gatherTarget.TakeDamage(gatherDamage);
         //end coroutine
         isGathering = false;
+        particleSystem.Stop();
         yield return null;
     }
 
