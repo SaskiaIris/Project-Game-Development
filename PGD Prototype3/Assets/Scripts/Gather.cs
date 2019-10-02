@@ -28,9 +28,12 @@ public class Gather : MonoBehaviour
     private Transform target;
     private Camera cam;
 
+    private Animator anim;
+
     private void Awake()
     {
         cam = FindObjectOfType<Camera>();
+        anim = GetComponent<Animator>();
     }
 
     private void Update()
@@ -46,7 +49,10 @@ public class Gather : MonoBehaviour
         if(Input.GetMouseButtonDown(0))
         {
             if (CanGather())
+            {
                 StartCoroutine(GatherResources());
+                anim.SetTrigger("Gather");
+            }
         }
     }
     
@@ -65,6 +71,7 @@ public class Gather : MonoBehaviour
         GatherableObject gatherTarget = target.GetComponent<GatherableObject>();
         //add resources
         resource += gatherTarget.ResourceAmount * gatherMultiplier;
+
         //deal damage to target object
         gatherTarget.TakeDamage(gatherDamage);
         //end coroutine
