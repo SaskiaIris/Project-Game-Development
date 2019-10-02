@@ -291,7 +291,6 @@ GameObject:
   - component: {fileID: 8047035507544068749}
   - component: {fileID: 8047035507544068748}
   - component: {fileID: 8047035507544068784}
-  - component: {fileID: 8047035507544068787}
   - component: {fileID: 8047035507544068786}
   - component: {fileID: 31749245}
   m_Layer: 0
@@ -370,21 +369,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 100
---- !u!114 &8047035507544068787
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8047035508660842142}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c161b75232c4394387389c2e31df762, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 0}
-  atk: 20
-  hitEnemy: 0
 --- !u!114 &8047035507544068786
 MonoBehaviour:
   m_ObjectHideFlags: 0
