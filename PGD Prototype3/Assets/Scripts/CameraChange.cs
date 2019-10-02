@@ -7,9 +7,16 @@ public class CameraChange : MonoBehaviour
     public Cinemachine.CinemachineFreeLook Camera;
     public Cinemachine.CinemachineFreeLook Camera2;
 
+    public bool HideCursor = false;
+
     // Start is called before the first frame update
     void Start()
     {
+        if(HideCursor)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
     }
 
     // Update is called once per frame
