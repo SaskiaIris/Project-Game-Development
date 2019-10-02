@@ -5,7 +5,7 @@ using UnityEngine;
 public class TreeSpawner : MonoBehaviour
 {
     [SerializeField]
-    private GameObject tree, treeContainer;
+    private GameObject tree = null, treeContainer = null;
 
     [SerializeField]
     private float spawnRangeX = 20, spawnRangeZ = 20;

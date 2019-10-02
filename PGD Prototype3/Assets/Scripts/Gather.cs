@@ -8,20 +8,20 @@ public class Gather : MonoBehaviour
     //start position for the raycast that detects
     //a valid target in front of the player
     [SerializeField]
-    private GameObject raycastStart;
+    private GameObject raycastStart = null;
 
     //objects in the gatherable layer
     [SerializeField]
-    private LayerMask gatherableLayerMask;
+    private LayerMask gatherableLayerMask = -1;
 
     [SerializeField]
-    private float gatherCooldown = 1f, gatherAmount = 10f, gatherRange = 2f, gatherMultiplier = 1f, gatherDamage = 25f;
+    private float gatherCooldown = 1f, gatherRange = 2f, gatherMultiplier = 1f, gatherDamage = 25f;
 
     [SerializeField]
-    private Text resourceText;
+    private Text resourceText = null;
     
     //amount of resources the player has
-    private float resource;
+    private float resource = 0;
     private bool isGathering = false;
 
     //objects that's hit by raycast to detect a target
