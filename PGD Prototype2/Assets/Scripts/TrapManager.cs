@@ -70,7 +70,9 @@ public class TrapManager : MonoBehaviour
             //make it so that the trap is triggered when the button is pressed
             button.onClick.AddListener(() => trap.TriggerTrap());
         }
-        
+
+        FindObjectOfType<ButtonTest>().Click();
+
         selectingTrapSlot = false;
         HideTrapSlots();
     }
