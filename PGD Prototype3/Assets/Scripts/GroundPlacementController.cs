@@ -20,6 +20,8 @@ public class GroundPlacementController : MonoBehaviour
 
         if (currentPlaceableObject != null)
         {
+        	Cursor.lockState = CursorLockMode.None;
+        	Cursor.visible = true;
             MoveCurrentObjectToMouse();
             //RotateFromMouseWheel();
             ReleaseIfClicked();
@@ -64,6 +66,8 @@ public class GroundPlacementController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+        	Cursor.lockState = CursorLockMode.Locked;
+        	Cursor.visible = false;
             currentPlaceableObject = null;
         }
     }
